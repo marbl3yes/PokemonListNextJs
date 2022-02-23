@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import Link from "next/link";
+import { useState } from "react";
 import useSwr from "swr";
 import styles from "../../styles/PokeList.module.css";
 
-export type PokemonListEntry = {
+export type NamedEntry = {
     name: string;
     url: string;
 }
@@ -11,7 +12,7 @@ export type PokemonList = {
     count: number;
     next?: string;
     previous?: string;
-    results: PokemonListEntry[];
+    results: NamedEntry[];
 }
 
 const fetchPokemonList = (url: string) => fetch(url).then(res => res.json());
@@ -41,34 +42,35 @@ const PokeList: React.FC = () => {
 
     return (
         <div className={styles.card}>
-            <div className={styles.total}>Total Pokemons: {data ? data.count : "0"}</div>
+            <div className={styles.total}>Total Pokemons: {data?.count ?? "0"}</div>
             <div className={styles.page}>Page: {page}</div>
             <div className={styles.button_container}>
                 <div>
                     <button
                         className={styles.navigation_button + " " + styles.button_previous}
                         onClick={previousPage}
-                        disabled={!data || !data.previous}>
+                        disabled={!data?.previous ?? false}>
                         Anterior
                     </button>
                     <button
                         className={styles.navigation_button + " " + styles.button_next}
                         onClick={nextPage}
-                        disabled={!data || !data.next}>
+                        disabled={!data?.next ?? false}>
                         Seguinte
                     </button>
                 </div>
             </div>
             <div className={styles.list_container}>
-                {data
-                    ? data.results.map((item, index) => (
-                        <div
-                            key={index}
-                            className={styles.list_item}>
-                            {item.name}
-                        </div>
-                    ))
-                    : (
+                {data?.results.map((item, index) => (
+                    <div
+                        key={index}
+                        className={styles.list_item}>
+                        <Link href={"/pokemon/" + item.name}>
+                            <a>{item.name}</a>
+                        </Link>
+                    </div>
+                ))
+                    ?? (
                         <div>Loading...</div>
                     )}
             </div>
