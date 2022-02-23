@@ -1,0 +1,48 @@
+.card {
+    display: block;
+    background-color: #eee;
+    border: 1px solid lightblue;
+    border-radius: 1em;
+    padding: 2em;
+    box-shadow: 5px 5px 15px 10px #ddd;
+}
+
+.total {
+    display: block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.center_container {
+    display: flex;
+    align-items: center;
+    flex: 1 1;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+}
+
+.navigation_button {
+    padding: 1em 1.5em;
+    margin: 0 0.5em;
+    border: none;
+    background-color: lightblue;
+}
+
+.navigation_button:disabled {
+    background-color: #ddd;
+}
+
+.button_previous {
+    border-radius: 1.5em 0 0 1.5em;
+}
+
+.button_next {
+    border-radius: 0 1.5em 1.5em 0;
+}
+
+.list_item {
+    padding: 0.3em;
+    text-transform: capitalize;
+}
