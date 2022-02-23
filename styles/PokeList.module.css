@@ -1,5 +1,8 @@
 .card {
-    display: block;
+    display: flex;
+    flex-flow: column;
+    height: calc(100vh - 12em);
+    width: 25vw;
     background-color: #eee;
     border: 1px solid lightblue;
     border-radius: 1em;
@@ -8,16 +11,27 @@
 }
 
 .total {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 2em;
     font-weight: bold;
 }
 
-.center_container {
+.page {
     display: flex;
     align-items: center;
-    flex: 1 1;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.button_container {
+    display: flex;
+    align-items: center;
+    flex: 0 1 auto;
     flex-direction: column;
     justify-content: center;
     padding: 1em;
@@ -40,6 +54,16 @@
 
 .button_next {
     border-radius: 0 1.5em 1.5em 0;
+}
+
+.list_container {
+    display: flex;
+    align-items: center;
+    flex: 1 1;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+    overflow: auto;
 }
 
 .list_item {
