@@ -1,7 +1,7 @@
 .card {
   display: flex;
   flex-flow: column;
-  height: calc(100vh - 6em);
+  height: calc(100vh - 7em);
   width: 60vw;
   background-color: #eee;
   border: 1px solid lightblue;
@@ -68,6 +68,16 @@
 }
 
 .list_item {
-  padding: 0.3em;
+  margin: 0.1em;
   text-transform: capitalize;
+  line-height: 1.4em;
+  width: 100%;
+  text-align: center;
+  border: 1px solid lightblue;
+  border-radius: 5px;
+}
+
+.list_item > a {
+  width: 100%;
+  display: inline-block;
 }
