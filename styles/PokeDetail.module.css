@@ -1,0 +1,16 @@
+.card {
+  display: flex;
+  flex-flow: column;
+  height: calc(100vh - 7em);
+  width: 60vw;
+  background-color: #eee;
+  border: 1px solid lightblue;
+  border-radius: 1em;
+  padding: 2em;
+  box-shadow: 5px 5px 15px 10px #ddd;
+}
+
+.sprite_container {
+  position: relative;
+  height: 200px;
+}
