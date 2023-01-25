@@ -105,6 +105,7 @@ const PokeDetail: React.FC<PokemonDetailProps> = ({ name }) => {
               src={data.sprites.front_default}
               layout="fill"
               objectFit="contain"
+              alt="Pokemon image"
             />
           </div>
         )}
